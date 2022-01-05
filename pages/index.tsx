@@ -15,7 +15,7 @@ const Home: NextPage = () => {
       <Container maxWidth="xl">
 
         <Container maxWidth="sm">
-          <Typography variant="h2" component="h2" align="center" color="text.primary" gutterTop gutterBottom>
+          <Typography variant="h2" component="h2" align="center" color="text.primary" gutterBottom>
             Welcome to <Link href="https://nextjs.org">Next.js</Link> and <Link href="https://mui.com">Material UI!</Link>
           </Typography>
         </Container>
