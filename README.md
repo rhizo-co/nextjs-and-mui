@@ -1,17 +1,7 @@
-This is a [Next.js](https://nextjs.org/) project with MUI
 
-## Credits
+# Next.js and MUI Template / Demo
 
-[`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
-
-[Material UI (MUI)](https://mui.com)
-
-[MUI NextJS Example](https://github.com/mui-org/material-ui/tree/master/examples/nextjs)
-
-[Emotion](https://emotion.sh/)
-
-[Next.JS](https://nextjs.org)
-
+This is a [Next.js](https://nextjs.org/) project with [MUI](https://mui.com)
 
 ## Getting Started (Development)
 
@@ -43,3 +33,16 @@ Stuff that is not yet done in this template / demo:
 Add an [API route](https://nextjs.org/docs/api-routes/introduction)
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as API Routes instead of React pages.
+
+
+## Credits
+
+[`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
+
+[Material UI (MUI)](https://mui.com)
+
+[MUI NextJS Example](https://github.com/mui-org/material-ui/tree/master/examples/nextjs)
+
+[Emotion](https://emotion.sh/)
+
+[Next.JS](https://nextjs.org)
