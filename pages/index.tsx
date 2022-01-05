@@ -1,68 +1,83 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { Box, Container, Link, Typography } from '@mui/material'
+import { Box, Button, Divider, Container, Grid, Link, Paper, Stack, Typography } from '@mui/material'
 
 const Home: NextPage = () => {
   return (
-    <Container maxWidth="sm">
+    <Box padding={2}>
+      
       <Head>
         <title>NextJS App with MUI</title>
-        <meta name="description" content="Template" />
+        <meta name="description" content="example index page" />
       </Head>
+      
+      <Container maxWidth="xl">
 
-       <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Welcome to <Link href="https://nextjs.org">Next.js!</Link>
-        </Typography>
+        <Container maxWidth="sm">
+          <Typography variant="h2" component="h2" align="center" color="text.primary" gutterTop gutterBottom>
+            Welcome to <Link href="https://nextjs.org">Next.js</Link> and <Link href="https://mui.com">Material UI!</Link>
+          </Typography>
+        </Container>
 
-        <Typography>
-          Get started by editing{' '}
-          <code>pages/index.tsx</code>
-        </Typography>
+        <Grid container spacing={2} align="center"  alignItems="stretch" justifyContent="center">
 
-        <Typography>
-          <Link href="https://nextjs.org/docs">
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </Link>
+          <Grid item xs={12} sm={11} md={10} lg={6} >
+            <Paper elevation={3}  sx={{ height: 1 }}>
+              <Box padding={2}>
+                <Typography variant="h4" component="h4" gutterBottom>Getting Started</Typography>
+                <Typography>
+                  Get started by editing <code>pages/index.tsx</code>
+                </Typography>
+              </Box>
+            </Paper>
+          </Grid>
 
-          <Link href="https://nextjs.org/learn">
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </Link>
+          <Grid item xs={12} sm={11} md={10} lg={6} >
+            <Paper elevation={3} sx={{ height: 1 }}>
+            <Box padding={2}>
+            <Typography variant="h4" component="h4" gutterBottom>Documentation & Examples</Typography>
+            <Stack
+              direction="row"
+              direction={{ xs: 'column', sm: 'column' , md: 'row', lg: 'column', xl: 'row' }}
+              spacing={2}
+              justifyContent="center"
+              >
+                <Button variant="outlined" href="https://nextjs.org/docs">
+                Next.js features and API
+                </Button>
+                <Button variant="outlined" href="https://nextjs.org/examples">
+                Next.js examples
+                </Button>
+                <Button variant="outlined" href="https://mui.com/components/autocomplete/">
+                Material UI features and API
+                </Button>
+                <Button variant="outlined" href="https://mui.com/getting-started/example-projects/">
+                Material UI examples
+                </Button>
+            </Stack>
+            </Box>
+            </Paper>
+          </Grid>
 
-          <Link
-            href="https://github.com/vercel/next.js/tree/master/examples"
+        </Grid>
+
+      </Container>
+
+      <Container maxWidth="sm">
+        <Box padding={6} component="footer">
+          <Typography variant="h6" align="center" gutterBottom>
+            Footer
+          </Typography>
+          <Typography
+            align="center"
+            color="text.secondary"
           >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </Link>
-
-          <Link
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </Link>
-        </Typography>
-      </Box>
-
-      <Typography variant="body2" color="text.secondary" align="center">
-        <Link color="inherit"
-          href="https://vercel.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </Link>
-      </Typography>
-    </Container>
+            Something here to give the footer a purpose!
+          </Typography>
+        </Box>
+      </Container>
+    </Box>
   )
 }
 
