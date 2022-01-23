@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Box, Button, Divider, Container, Grid, Link, Paper, Stack, Typography } from '@mui/material'
 
-const Home: NextPage = () => {
+export default Home = () => {
   return (
     <Box padding={2}>
       
@@ -38,7 +38,6 @@ const Home: NextPage = () => {
             <Box padding={2}>
             <Typography variant="h4" component="h4" gutterBottom>Documentation & Examples</Typography>
             <Stack
-              direction="row"
               direction={{ xs: 'column', sm: 'column' , md: 'row', lg: 'column', xl: 'row' }}
               spacing={2}
               justifyContent="center"
@@ -79,6 +78,4 @@ const Home: NextPage = () => {
       </Container>
     </Box>
   )
-}
-
-export default Home
+};
