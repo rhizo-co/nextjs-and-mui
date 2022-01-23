@@ -1,11 +1,14 @@
+import type { EmotionCache } from '@emotion/cache';
+import type { AppContextType, AppInitialProps, AppPropsType, NextComponentType } from 'next/dist/shared/lib/utils';
 import type { DocumentContext } from 'next/document';
-import Document, { DocumentContext, Html, Head, Main, NextScript } from 'next/document';
-import createEmotionServer from '@emotion/server/create-instance';
-import theme from '../src/theme';
+
 import createCache from '@emotion/cache';
+import createEmotionServer from '@emotion/server/create-instance';
+import Document, { Head, Html, Main, NextScript } from 'next/document';
+
 import { theme } from '../theme';
 
-export default class MyDocument extends Document {
+export default class MyDocument extends Document<{ emotionStyleTags: JSX.Element[] }> {
   render() {
     return (
       <Html lang="en">
@@ -14,12 +17,9 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content={theme.palette.primary.main} />
           <link rel="shortcut icon" href="/static/favicon.ico" />
           <link rel="icon" href="/favicon.ico" />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-          />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
           {/* Inject MUI styles first to match with the prepend: true configuration. */}
-          {(this.props as any).emotionStyleTags}
+          {this.props.emotionStyleTags}
         </Head>
         <body>
           <Main />
@@ -28,7 +28,7 @@ export default class MyDocument extends Document {
       </Html>
     );
   }
-};
+}
 
 // `getInitialProps` belongs to `_document` (instead of `_app`),
 // it's compatible with static-site generation (SSG).
@@ -59,12 +59,12 @@ MyDocument.getInitialProps = async (ctx: DocumentContext) => {
 
   // You can consider sharing the same emotion cache between all the SSR requests to speed up performance.
   // However, be aware that it can have global side effects.
-  const cache = createEmotionCache();
+  const cache = createCache({ key: 'css', prepend: true });
   const { extractCriticalToChunks } = createEmotionServer(cache);
 
   ctx.renderPage = () =>
     originalRenderPage({
-      enhanceApp: (App: any) =>
+      enhanceApp: (App: NextComponentType<AppContextType, AppInitialProps, AppPropsType | (AppPropsType & { emotionCache: EmotionCache })>) =>
         function EnhanceApp(props) {
           return <App emotionCache={cache} {...props} />;
         },
