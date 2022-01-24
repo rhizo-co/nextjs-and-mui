@@ -1,7 +1,7 @@
 
 # Next.js and MUI Template / Demo
 
-This is a [Next.js](https://nextjs.org/) project with [MUI](https://mui.com)
+This is a [Next.js](https://nextjs.org/) project with [MUI](https://mui.com) written in typescript.
 
 ## Getting Started
 
