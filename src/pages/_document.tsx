@@ -6,7 +6,9 @@ import createCache from '@emotion/cache';
 import createEmotionServer from '@emotion/server/create-instance';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 
-import { theme } from '../theme';
+import { themeProvider } from '../theme';
+
+const theme = themeProvider({ darkMode: false });
 
 export default class MyDocument extends Document<{ emotionStyleTags: JSX.Element[] }> {
   render() {
