@@ -10,32 +10,36 @@ import { createTheme } from '@mui/material/styles';
 // get rid of shadows ?
 // add an accent color
 
-export const themeProvider = ({ darkMode }: { darkMode: boolean }) =>
-  createTheme({
-    typography: {
-      fontFamily: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"'].join(','),
-      button: {
-        textTransform: 'none',
-      },
+export const themeProvider = ({ darkMode }: {darkMode: boolean}) => createTheme({
+  typography: {
+    fontFamily: [
+      'Courier',
+      '"Courier New"',
+      'monospace',
+      'sans-serif',
+    ].join(','),
+    button: {
+      textTransform: 'none'
+    }
+  },
+  palette: {
+    mode: darkMode ? 'dark' : 'light',
+    primary: {
+      main: purple.A100,
     },
-    palette: {
-      mode: darkMode ? 'dark' : 'light',
-      primary: {
-        main: purple.A100,
-      },
-      secondary: {
-        main: green.A200,
-      },
-      error: {
-        main: red.A400,
-      },
+    secondary: {
+      main: green.A200,
     },
-    components: {
-      MuiButton: {
-        defaultProps: {
-          disableElevation: true,
-          disableRipple: true,
-        },
-      },
+    error: {
+      main: red.A400,
     },
-  });
+  },
+  components: {
+    MuiButton: {
+      defaultProps: {
+        disableElevation: true,
+        disableRipple: true
+      }
+    },
+  },
+});
