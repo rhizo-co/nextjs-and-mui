@@ -3,7 +3,7 @@
 
 This is a [Next.js](https://nextjs.org/) project with [MUI](https://mui.com)
 
-## Getting Started (Development)
+## Getting Started
 
 ### Replit
 
@@ -23,6 +23,17 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
+## Development
+
+### Formatting & Linting
+
+This project uses prettier for code formatting and eslint for linting.
+
+To apply formating and linting:
+
+```bash
+npm run lint
+```
 
 ## TODO
 

@@ -26,6 +26,8 @@
           "caseInsensitive": true
         }
       }
-    ]
+    ],
+    "semi": "error",
+    "no-unexpected-multiline": "error"
   }
 }
